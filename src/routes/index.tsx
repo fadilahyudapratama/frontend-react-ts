@@ -16,9 +16,14 @@ import Register from "../views/auth/register.tsx";
 // import view login
 import Login from "../views/auth/login.tsx";
 
+// import view dashboard
+import Dashboard from "../views/admin/dashboard/index.tsx";
+
 export default function AppRoutes() {
+
     // menggunakan useContext untuk mendapatkan nilai dari AuthContext
     const auth = useContext(AuthContext);
+
     // menggunakana optional chaining untuk menghindari error jika auth tidak ada
     const isAuthenticated = auth?.isAuthenticated ?? false;
 
@@ -35,6 +40,11 @@ export default function AppRoutes() {
             {/* route "/login" */}
             <Route path="/login" element={
                 isAuthenticated ? <Navigate to="/admin/dashboard" replace /> : <Login />
+            } />
+
+            {/* route "/admin/dashboard" */}
+            <Route path="/admin/dashboard" element={
+                isAuthenticated ? <Dashboard /> : <Navigate to="/login" replace />
             } />
 
         </Routes>
