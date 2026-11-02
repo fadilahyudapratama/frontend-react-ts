@@ -1,4 +1,6 @@
 # React + TypeScript + Vite
+<!-- jalankan apliakasi backend ( rust-backend-api-jwt)
+lalu jalan fe : npm run dev -->
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
