@@ -22,6 +22,9 @@ import Dashboard from "../views/admin/dashboard/index.tsx";
 //import view users
 import UsersIndex from "../views/admin/users/index.tsx";
 
+//import view users create
+import UsersCreate from "../views/admin/users/create.tsx";
+
 export default function AppRoutes() {
 
     // menggunakan useContext untuk mendapatkan nilai dari AuthContext
@@ -53,6 +56,11 @@ export default function AppRoutes() {
             {/* route "/admin/users" */}
             <Route path="/admin/users" element={
                 isAuthenticated ? <UsersIndex /> : <Navigate to="/login" replace />
+            } />
+
+            {/* route "/admin/users/create" */}
+            <Route path="/admin/users/create" element={
+                isAuthenticated ? <UsersCreate /> : <Navigate to="/login" replace />
             } />
 
         </Routes>
